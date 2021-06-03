@@ -1,0 +1,6 @@
+source /home/nvidia/roborts_ws/devel/setup.sh
+roscore &
+roslaunch roborts_bringup base.launch 1>/dev/null 2>/dev/null &
+# rosrun key_ctrl_robo vel_loop_node &
+roslaunch rosbridge_server rosbridge_websocket.launch 1>/dev/null 2>/dev/null &
+rosrun key_ctrl_robo ctrl_node.py
